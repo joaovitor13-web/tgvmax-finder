@@ -1,0 +1,38 @@
+# Python Byte-compiled files / Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+
+# Distribution / packaging (essentials)
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDE-specific files
+# VS Code
+.vscode/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Log files
+*.log
+logs/
+
+# Temporary editor files
+*.swp
+*~
+*.tmp
+
+# Script de setup do projeto
+setup_project.sh

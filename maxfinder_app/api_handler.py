@@ -8,7 +8,7 @@ class MaxFinderAPI:
 
     def __init__(self):
         # Parâmetros de busca
-        self.limite = 10 # Um valor padrão razoável
+        self.limite = 100
         self.origem_busca = None
         self.destino_busca = None
         self.data_busca = None # Ex: "AAAA/MM/DD"
@@ -37,13 +37,14 @@ class MaxFinderAPI:
         params = {"limit": self.limite}
 
         params["where"] = "od_happy_card='OUI'"  # Filtro crucial para trens TGV Max (indica que há disponibilidade)
-        
+        params["order_by"] = "date"  # Ordenar por data
+
         if self.origem_busca:
             params["where"] += f" AND origine like '{self.origem_busca}'"
         if self.destino_busca:
             params["where"] += f" AND destination like '{self.destino_busca}'"
         if self.data_busca:
-            params["where"] += f" AND date like '{self.origem_busca}' AND "
+            params["where"] += f" AND date=date'{self.data_busca}'"
              
         return params
 
